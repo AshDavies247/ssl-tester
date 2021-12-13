@@ -1,0 +1,1 @@
+<header class="bg-purple-200 h-32 mb-11"></header>
