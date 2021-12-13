@@ -1,6 +1,8 @@
 <template>
     <div class="p-4 bg-grey-100 shadow-md">
-        <app-button variant="primary" class="block w-full"><slot /></app-button>
+        <app-button variant="primary" class="block w-full" type="submit"
+            ><slot
+        /></app-button>
     </div>
 </template>
 

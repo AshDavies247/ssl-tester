@@ -19,6 +19,7 @@ export default defineComponent({
     props: {
         href: { type: String, required: false },
         variant: { type: String, default: "primary" },
+        type: { type: String, default: "button" },
     },
     setup(props) {
         const element = computed(() => (props.href ? "a" : "button"));
@@ -26,9 +27,9 @@ export default defineComponent({
         const attributes = computed(() => {
             if (props.href) {
                 return { href: props.href };
+            } else {
+                return { href: props.type };
             }
-
-            return {};
         });
 
         function btnClass() {

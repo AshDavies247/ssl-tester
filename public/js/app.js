@@ -19443,6 +19443,10 @@ var variants = {
     variant: {
       type: String,
       "default": "primary"
+    },
+    type: {
+      type: String,
+      "default": "button"
     }
   },
   setup: function setup(props) {
@@ -19454,9 +19458,11 @@ var variants = {
         return {
           href: props.href
         };
+      } else {
+        return {
+          href: props.type
+        };
       }
-
-      return {};
     });
 
     function btnClass() {
@@ -20183,7 +20189,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _fields_AppRadioList_vue__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../fields/AppRadioList.vue */ "./resources/js/components/fields/AppRadioList.vue");
 /* harmony import */ var _fields_AppSubmit_vue__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../fields/AppSubmit.vue */ "./resources/js/components/fields/AppSubmit.vue");
 /* harmony import */ var _AppModal_vue__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../AppModal.vue */ "./resources/js/components/AppModal.vue");
+var _excluded = ["first_expiration_reminder", "second_expiration_reminder", "third_expiration_reminder"];
 
+
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
@@ -20270,18 +20281,26 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       custom_hostname: ""
     });
 
-    function submit(_x) {
+    function submit() {
       return _submit.apply(this, arguments);
     }
 
     function _submit() {
-      _submit = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee(e) {
+      _submit = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
+        var payload, first_expiration_reminder, second_expiration_reminder, third_expiration_reminder, theRest;
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                _context.next = 2;
-                return (0,_api__WEBPACK_IMPORTED_MODULE_2__.saveNewSSLTest)(data).then(function () {
+                if (showReminderIntervals.value) {
+                  payload = data;
+                } else {
+                  first_expiration_reminder = data.first_expiration_reminder, second_expiration_reminder = data.second_expiration_reminder, third_expiration_reminder = data.third_expiration_reminder, theRest = _objectWithoutProperties(data, _excluded);
+                  payload = theRest;
+                }
+
+                _context.next = 3;
+                return (0,_api__WEBPACK_IMPORTED_MODULE_2__.saveNewSSLTest)(payload).then(function () {
                   modal.shouldShow = true;
                   modal.title = "Success!";
                   modal.content = "success message";
@@ -20292,7 +20311,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   modal.content = "Failure message";
                 });
 
-              case 2:
+              case 3:
               case "end":
                 return _context.stop();
             }
@@ -20514,6 +20533,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       'mb-7': !_ctx.noMargin
     })
   }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+    type: "button",
     "class": "flex justify-between items-center w-full py-5 px-6 bg-purple-400 text-left",
     onClick: _cache[0] || (_cache[0] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)( //@ts-ignore
     function () {
@@ -21126,7 +21146,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_app_button, {
     variant: "primary",
-    "class": "block w-full"
+    "class": "block w-full",
+    type: "submit"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
       return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.renderSlot)(_ctx.$slots, "default")];

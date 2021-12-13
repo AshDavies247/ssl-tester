@@ -178,8 +178,23 @@ export default defineComponent({
             custom_hostname: "",
         });
 
-        async function submit(e: Event) {
-            await saveNewSSLTest(data)
+        async function submit() {
+            let payload: NewSSLTestDto;
+
+            if (showReminderIntervals.value) {
+                payload = data;
+            } else {
+                const {
+                    first_expiration_reminder,
+                    second_expiration_reminder,
+                    third_expiration_reminder,
+                    ...theRest
+                } = data;
+
+                payload = theRest;
+            }
+
+            await saveNewSSLTest(payload)
                 .then(() => {
                     modal.shouldShow = true;
                     modal.title = "Success!";

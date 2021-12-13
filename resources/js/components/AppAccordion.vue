@@ -1,6 +1,7 @@
 <template>
     <div :class="{ 'mb-7': !noMargin }">
         <button
+            type="button"
             class="
                 flex
                 justify-between
