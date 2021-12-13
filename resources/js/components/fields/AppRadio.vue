@@ -31,7 +31,7 @@ import AppIcon from "../AppIcon.vue";
 
 export default defineComponent({
     name: "app-radio",
-    emit: "change",
+    emit: "update:modelValue",
     components: {
         AppIcon,
     },

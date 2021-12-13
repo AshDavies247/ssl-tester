@@ -1,6 +1,6 @@
 <template>
     <div class="flex items-center">
-        <app-label>{{ label }}</app-label>
+        <app-label :required="required" :info="info">{{ label }}</app-label>
 
         <div class="flex items-center gap-3">
             <slot />
@@ -20,6 +20,8 @@ export default defineComponent({
     },
     props: {
         label: { type: String, required: true },
+        required: { type: Boolean },
+        info: { type: String },
     },
 });
 </script>

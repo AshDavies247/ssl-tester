@@ -25,6 +25,7 @@ import AppRadio from "./AppRadio.vue";
 
 export default defineComponent({
     name: "app-radio-list",
+    emit: "update:modelValue",
     components: {
         AppLabel,
         AppRadio,

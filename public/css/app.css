@@ -402,6 +402,19 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-shadow-colored: 0 0 #0000;
 }
 
+.filter {
+  --tw-blur: var(--tw-empty,/*!*/ /*!*/);
+  --tw-brightness: var(--tw-empty,/*!*/ /*!*/);
+  --tw-contrast: var(--tw-empty,/*!*/ /*!*/);
+  --tw-grayscale: var(--tw-empty,/*!*/ /*!*/);
+  --tw-hue-rotate: var(--tw-empty,/*!*/ /*!*/);
+  --tw-invert: var(--tw-empty,/*!*/ /*!*/);
+  --tw-saturate: var(--tw-empty,/*!*/ /*!*/);
+  --tw-sepia: var(--tw-empty,/*!*/ /*!*/);
+  --tw-drop-shadow: var(--tw-empty,/*!*/ /*!*/);
+  --tw-filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
 .backdrop-blur-sm {
   --tw-backdrop-blur: var(--tw-empty,/*!*/ /*!*/);
   --tw-backdrop-brightness: var(--tw-empty,/*!*/ /*!*/);
@@ -433,6 +446,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-left: auto;
   margin-right: auto;
 }
+.mb-4 {
+  margin-bottom: 1rem;
+}
+.mb-7 {
+  margin-bottom: 1.75rem;
+}
 .mb-2 {
   margin-bottom: 0.5rem;
 }
@@ -448,14 +467,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mr-2 {
   margin-right: 0.5rem;
 }
-.mb-7 {
-  margin-bottom: 1.75rem;
-}
 .block {
   display: block;
 }
 .flex {
   display: flex;
+}
+.table {
+  display: table;
 }
 .grid {
   display: grid;
@@ -478,11 +497,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .min-h-screen {
   min-height: 100vh;
 }
-.w-screen {
-  width: 100vw;
-}
 .w-full {
   width: 100%;
+}
+.w-screen {
+  width: 100vw;
 }
 .w-52 {
   width: 13rem;
@@ -493,6 +512,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .w-20 {
   width: 5rem;
 }
+.max-w-xl {
+  max-width: 36rem;
+}
 .max-w-md {
   max-width: 28rem;
 }
@@ -502,6 +524,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 .max-w-form {
   max-width: 68.125rem;
 }
+.max-w-2xl {
+  max-width: 42rem;
+}
+.max-w-4xl {
+  max-width: 56rem;
+}
 .flex-shrink-0 {
   flex-shrink: 0;
 }
@@ -509,11 +537,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-rotate: 180deg;
   transform: var(--tw-transform);
 }
-.cursor-not-allowed {
-  cursor: not-allowed;
-}
 .cursor-pointer {
   cursor: pointer;
+}
+.cursor-not-allowed {
+  cursor: not-allowed;
 }
 .grid-cols-1 {
   grid-template-columns: repeat(1, minmax(0, 1fr));
@@ -527,14 +555,20 @@ Ensure the default browser behavior of the `hidden` attribute.
 .justify-between {
   justify-content: space-between;
 }
-.gap-1 {
-  gap: 0.25rem;
+.gap-2 {
+  gap: 0.5rem;
 }
 .gap-3 {
   gap: 0.75rem;
 }
+.gap-1 {
+  gap: 0.25rem;
+}
 .overflow-hidden {
   overflow: hidden;
+}
+.rounded-lg {
+  border-radius: 0.5rem;
 }
 .rounded-sm {
   border-radius: 0.125rem;
@@ -550,6 +584,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .border-b {
   border-bottom-width: 1px;
+}
+.border-red-200 {
+  --tw-border-opacity: 1;
+  border-color: rgb(207 10 60 / var(--tw-border-opacity));
 }
 .border-purple-400 {
   --tw-border-opacity: 1;
@@ -567,13 +605,17 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-bg-opacity: 1;
   background-color: rgb(245 246 247 / var(--tw-bg-opacity));
 }
-.bg-blue-50 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(0 123 255 / var(--tw-bg-opacity));
-}
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+.bg-purple-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(113 71 111 / var(--tw-bg-opacity));
+}
+.bg-blue-50 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 123 255 / var(--tw-bg-opacity));
 }
 .bg-purple-200 {
   --tw-bg-opacity: 1;
@@ -587,18 +629,27 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-bg-opacity: 1;
   background-color: rgb(58 168 56 / var(--tw-bg-opacity));
 }
-.bg-purple-400 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(113 71 111 / var(--tw-bg-opacity));
-}
 .bg-opacity-50 {
   --tw-bg-opacity: 0.5;
+}
+.fill-red-200 {
+  fill: #cf0a3c;
+}
+.fill-white {
+  fill: #fff;
+}
+.p-4 {
+  padding: 1rem;
 }
 .p-3 {
   padding: 0.75rem;
 }
-.p-4 {
-  padding: 1rem;
+.p-2 {
+  padding: 0.5rem;
+}
+.py-5 {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
 }
 .px-6 {
   padding-left: 1.5rem;
@@ -619,10 +670,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .px-2 {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
-}
-.py-5 {
-  padding-top: 1.25rem;
-  padding-bottom: 1.25rem;
 }
 .pb-4 {
   padding-bottom: 1rem;
@@ -672,6 +719,13 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
+.text-blue-100 {
+  --tw-text-opacity: 1;
+  color: rgb(3 98 145 / var(--tw-text-opacity));
+}
+.underline {
+  text-decoration: underline;
+}
 .antialiased {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -691,13 +745,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   outline: 2px solid transparent;
   outline-offset: 2px;
 }
+.filter {
+  filter: var(--tw-filter);
+}
 .backdrop-blur-sm {
   --tw-backdrop-blur: blur(4px);
   -webkit-backdrop-filter: var(--tw-backdrop-filter);
           backdrop-filter: var(--tw-backdrop-filter);
 }
-.transition-colors {
-  transition-property: background-color, border-color, color, fill, stroke;
+.transition-transform {
+  transition-property: transform;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
@@ -708,13 +765,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
-.transition-transform {
-  transition-property: transform;
+.transition-colors {
+  transition-property: background-color, border-color, color, fill, stroke;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
 .duration-200 {
   transition-duration: 200ms;
+}
+.last\:mb-0:last-child {
+  margin-bottom: 0px;
 }
 .hover\:bg-blue-100:hover {
   --tw-bg-opacity: 1;

@@ -16,7 +16,7 @@
             <heading-beta class="text-white">{{ title }}</heading-beta>
             <app-icon
                 type="arrow"
-                class="transition-transform duration-200"
+                class="transition-transform duration-200 fill-white"
                 :class="{ 'rotate-180': open }"
             />
         </button>

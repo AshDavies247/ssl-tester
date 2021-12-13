@@ -1,17 +1,33 @@
 <template>
-    <Suspense>
+    <component :is="Suspense">
         <slot />
 
         <template #fallback>
             <slot name="fallback">Loading...</slot>
         </template>
-    </Suspense>
+    </component>
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import {
+    defineComponent,
+    Suspense as suspense_,
+    SuspenseProps,
+    VNodeProps,
+} from "vue";
 
 export default defineComponent({
     name: "reg-suspense",
+    setup() {
+        const Suspense = suspense_ as {
+            new (): {
+                $props: VNodeProps & SuspenseProps;
+            };
+        };
+
+        return {
+            Suspense,
+        };
+    },
 });
 </script>

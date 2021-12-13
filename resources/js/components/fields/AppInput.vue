@@ -26,6 +26,7 @@ import AppLabel from "./AppLabel.vue";
 
 export default defineComponent({
     name: "app-input",
+    emit: "update:modelVlue",
     components: {
         AppLabel,
     },

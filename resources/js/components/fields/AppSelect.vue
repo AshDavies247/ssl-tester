@@ -36,6 +36,7 @@ import AppLabel from "./AppLabel.vue";
 
 export default defineComponent({
     name: "app-select",
+    emit: "update:modelValue",
     components: {
         AppLabel,
     },

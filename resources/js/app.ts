@@ -1,3 +1,5 @@
+import "regenerator-runtime/runtime";
+
 import { createApp } from "vue";
 
 import AppButton from "./components/AppButton.vue";

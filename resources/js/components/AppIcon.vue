@@ -13,12 +13,14 @@
 <script lang="ts">
 import { defineComponent, computed, Component } from "vue";
 
-import Lock from "./icons/Lock.vue";
-import Info from "./icons/Info.vue";
 import Arrow from "./icons/Arrow.vue";
+import Bin from "./icons/Bin.vue";
+import Info from "./icons/Info.vue";
+import Lock from "./icons/Lock.vue";
 
 const components: { [key: string]: Component } = {
     arrow: Arrow,
+    bin: Bin,
     lock: Lock,
     info: Info,
 };

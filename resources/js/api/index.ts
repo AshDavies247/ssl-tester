@@ -14,6 +14,10 @@ export async function getSSLTest(id: string) {
     return await axiosInstance.get(`/ssl/${id}`);
 }
 
+export async function deleteSSLTest(id: string) {
+    return await axiosInstance.delete(`/ssl/${id}`);
+}
+
 export async function saveNewSSLTest(payload: NewSSLTestDto) {
     console.log(payload);
     await axiosInstance.post("/ssl", payload);

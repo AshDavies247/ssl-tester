@@ -101,7 +101,7 @@
     <app-modal
         v-if="modal.shouldShow"
         :modal="modal"
-        @close="modal.shouldShow = false"
+        @close="onModalClose"
     ></app-modal>
 </template>
 
@@ -115,6 +115,8 @@ import { SelectOption } from "../../typings/SelectOption";
 import { useVuelidate } from "@vuelidate/core";
 
 import { saveNewSSLTest } from "../../api";
+
+import useModal from "../../composables/useModal";
 
 import FormFields from "../fields/FormFields.vue";
 import AppAccordion from "../AppAccordion.vue";
@@ -144,11 +146,7 @@ export default defineComponent({
         AppModal,
     },
     setup() {
-        const modal = reactive({
-            shouldShow: false,
-            title: "Test",
-            content: "Test",
-        });
+        const { modal } = useModal();
 
         const checkrateOptions: Radio[] = [
             { label: "5 Minutes", value: 300, disabled: true },
@@ -195,6 +193,10 @@ export default defineComponent({
                 });
         }
 
+        function onModalClose() {
+            window.location.href = "/all-monitors";
+        }
+
         return {
             data,
             checkrateOptions,
@@ -202,6 +204,7 @@ export default defineComponent({
             showReminderIntervals,
             submit,
             modal,
+            onModalClose,
         };
     },
 });
